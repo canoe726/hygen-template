@@ -1,12 +1,8 @@
 ---
-<% if (route1) { -%>
-    to: src/pageComponents/<%= route1 %>/<%= name %>/<%= pascal %>Main.tsx
-<% } else { -%>
-    to: src/pageComponents/<%= name %>/<%= pascal %>Main.tsx
-<% } -%>
+to: "<%= route1 ? route2 ? `src/pageComponents/${name}/${route1}/${route2}/${fileName}Main.tsx` : `src/pageComponents/${name}/${route1}/${fileName}Main.tsx` : `src/pageComponents/${name}/${fileName}Main.tsx` %>"
 ---
 
-export default function <%= pascal %>Main() {
+export default function <%= fileName %>Main() {
     const [example, setExample] = useState('')
 
     const exampleFunction = () => {}
